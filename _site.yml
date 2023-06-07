@@ -9,27 +9,21 @@ navbar:
   - text: Workshop Weekly Notes
     icon: fa-calendar
     menu:
-    - text: Week 1 Intro to Git
+    - text: Week 1 Intro to Docker
       icon: fa-cogs
       href: week1.html
-    - text: Week 2 More Git/Intro to GitHub
+    - text: Week 2 Setting up a JupyterHub
       icon: fab fa-github-alt
-      href: week2.html
-    - text: Week 3 Intro to Agile and Kanban
+    - text: Week 3 Remote-sensing Data in R
       icon: fa-recycle
-      href: week3.html
-    - text: Week 4 Intro to Scrum
+    - text: Week 4 Remote sensing Data in R
       icon: fa-recycle
-      href: week4.html
-    - text: Week 5 Part 1. R packages
+    - text: Week 5 Part 1. SDMs
       icon: fa-box
-      href: week5.html
-    - text: Week 6 Part 2. R packages
+    - text: Week 6 Part 2. SDMs
       icon: fa-box
-      href: week6.html
-    - text: Week 7 Part 1. R Markdown
+    - text: Week 7 Part 3. SDMs
       icon: fa-file-code
-      href: week7.html
     - text: Week 8 Part 2. Reports with R Markdown/Quarto
       icon: fa-file-code
       href: week8.html
@@ -42,10 +36,8 @@ navbar:
   right:
   - text: Repo
     icon: fab fa-github
-    href: https://github.com/RVerse-Tutorials/RWorkflow-NWFSC-2022
-  - text: Org
-    href: https://github.com/orgs/RWorkflow-Workshop
-   
+    href: https://github.com/RVerse-Tutorials/RWorkflow-NWFSC-2023
+
 output:
   html_document:
     theme: readable

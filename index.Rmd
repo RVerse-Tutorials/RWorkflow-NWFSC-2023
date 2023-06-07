@@ -1,12 +1,12 @@
 ---
-title: "Practical R+Git Workflow for Scientists May-July 2022"
+title: "Practical R+Git Workflow for Scientists June-July 2023"
 ---
 
 <table style="background-color: blue; width: 100%;">
 <tr>
 <td style="text-align:left; padding:5px;"><a style="color:white" href="http://nmfs-openscapes.github.io">NMFS Openscapes</a>
 </td>
-<td style="text-align:center; padding:5px;"><a style="color:white" href="https://github.com/nmfs-openscapes/.github/wiki">Wiki</a>
+<td style="text-align:center; padding:5px;"><a style="color:white" href="http://nmfs-opensci.github.io">NMFS Open Science</a>
 </td>
 <td style="text-align:right; padding:5px;"><a style="color:white" href="https://nmfs-openscapes.github.io/NMFS-R-UG/">NMFS R User Group</a>
 </td>
@@ -16,11 +16,9 @@ title: "Practical R+Git Workflow for Scientists May-July 2022"
 
 <img style="float: right;" src="images/tools-logo-transparent.png" width=30%>
 
-<span style="color: red">The July 29 session of the R Workflow Workshops is post-poned to August 5th due to technical difficulties with our WebEx.</span>
+These short sessions (45min to 1hr) will be focused on R, RStudio and GitHub tools and practices for NOAA scientists to help you be **faster, more efficient and organized**. The focus of these workshops is practical skills and tools; they are intended to get you applying the skill immediately in your own work. I will give you links to my and other NOAA GitHub repositories that illustrate more complex examples (that you can copy and build on).
 
-Starting May 20th, 2022. These short sessions (45min to 1hr) will be focused on R, RStudio and GitHub tools and practices for NOAA scientists to help you be **faster, more efficient and organized**. The focus of these workshops is practical skills and tools; they are intended to get you applying the skill immediately in your own work. I will give you links to my and other NOAA GitHub repositories that illustrate more complex examples (that you can copy and build on).
-
-**Target audience**: Note only weeks 5-6 assume you program in R. Weeks 1-4: Beginner practical intro to Git and GitHub. This year, I also have two sessions on Agile project management and Scrum using GitHub issues and project boards. Weeks 5-6: You already code in R and want to learn how to make an R package so you can share your code with colleagues better. Weeks 7-8: R Markdown. I'll use examples with R but really this is about the RStudio and GitHub tools for making documents and pages.
+**Target audience**: This year I am assuming that you have an understanding of using Git and GitHub. See the [RWorflow Workshops 2022](https://rverse-tutorials.github.io/RWorkflow-NWFSC-2022/) if not. All sessions (except last) were recorded. The 2023 sessions are in preparation for a hackathon I am teaching in Sept 2023 on Species Distribution Modeling for marine systems. 
 
 **About the instructor Eli Holmes**: I am a modeler/applied mathematician. I develop R packages for public use. I teach time-series analysis at the University of Washington (using R) and I teach workshops on R and reproducible research and am heavily involved in efforts to support transition to Open Science workflows within NOAA Fisheries. [website](http://eeholmes.github.io/)
 
@@ -28,39 +26,23 @@ Starting May 20th, 2022. These short sessions (45min to 1hr) will be focused on 
 
 ### Video links for the sessions
 
-[Join via WebEx](https://noaanmfs-meets.webex.com/noaanmfs-meets/j.php?MTID=m78f662eb57d19d05c40c45a722d81d5e) (same link each week)
+TBD
 
 ### Set-up for the workshop
 
 For weeks 1-4, you'll need a [GitHub](https://github.com/) account and [GitHub Desktop](https://desktop.github.com/) installed. For weeks 5-6, you'll want R and RStudio  installed on your computer or you can use [RStudio Cloud](https://rstudio.cloud/). If you do the latter, you don't need to install any software.
 
-</div>
-
-<div class="column-right">
-
-| topic |
-|----------------|
-| May 20   Git/GitHub, part 1  [lecture](week1-introtogit.html)        --   [video](https://youtu.be/M1sOC4046PQ) |
-| May 27   Git/GitHub, part 2  [lecture](week2-github.html)         --      [video](https://youtu.be/NrHTf-TF_7A) |
-| June 3   Agile part 1, Kanban       [lecture](week3-introtoagile-slides.html) -- [video](https://youtu.be/uBTzghMCDaQ) |
-| June 10  Agile part 2, Scrum        [lecture](week4-scrum-slides.html)        -- [video](https://youtu.be/mPyT0g3kBQE) |
-| July 8   R packages, part 1  [lecture](week5-introtopackages.html)     -- [video](https://youtu.be/LWWfRlyBbVs) |
-| July 15  R packages, part 2  [lecture](week6-morewithpackages.html)  -- [video](https://youtu.be/SxDLLtaYmj8)  |
-| July 22  R markdown reports, part 1 [lecture](week7-rmdreports-part1.html)  -- [video](https://youtu.be/zPzhQYuWO68)  | 
-| Aug 5  R markdown reports, part 2  [lecture](week8-rmdreports-part2.html) -- [video](https://youtu.be/u79WfOWAoN4)  |
-
-</div>
-
 # ----
 
-### 2022 Topics Fridays 10-11am PDT
+### 2023 Topics
 
 
 ### Part 1
 
-* [May 20](week1-introtogit.html) **Introduction to Git/GitHub** I will introduce you to Git and GitHub for tracking your work. In this session, you will learn the 3 basic Git skills that are all you need to get started (and for many scientists are all they need). I worked for years with just these 3 skills. Skill 1: Clone one of your GitHub repos onto your computer, Skill 2: Commit local changes, and Skill 3: Push/Pull changes to/from GitHub. I’ll discuss how to deal with merge conflicts, which often cause beginners a lot of heartburn. [Lecture notes](week1-introtogit.html) - [Lecture video](https://youtu.be/M1sOC4046PQ) - [Q&A](week1.html)
+* [June X](week1-introtodocker.html) **Introduction to Docker for R users** I will introduce you to using Docker to run R and RStudio in containers. [Lecture notes](week1-introtodocker.html)
+<!-- - [Lecture video](https://youtu.be/M1sOC4046PQ) - [Q&A](week1.html) -->
 
-* [May 27](week2-github.html) **More Git skills + GitHub issues, organizations, and releases** This week, I'll cover the basics of reverting changes and using Git branches. Then we'll learn about key GitHub tools for managing your work and collaborating: issues, discussion threads, wikis, organizations and releases. These features are key to helping you organize your work and keep track of what needs to be done. These features also allow a team to collaborate effectively together on a repository. Next week, we'll start learning about GitHub project boards. [Lecture notes](week2-github.html) - [Lecture video](https://youtu.be/NrHTf-TF_7A) - [Q&A](week2.html)
+* [June X](week2-github.html) **More Git skills + GitHub issues, organizations, and releases** This week, I'll cover the basics of reverting changes and using Git branches. Then we'll learn about key GitHub tools for managing your work and collaborating: issues, discussion threads, wikis, organizations and releases. These features are key to helping you organize your work and keep track of what needs to be done. These features also allow a team to collaborate effectively together on a repository. Next week, we'll start learning about GitHub project boards. [Lecture notes](week2-github.html) - [Lecture video](https://youtu.be/NrHTf-TF_7A) - [Q&A](week2.html)
 
 * [June 3](week3-introtoagile-slides.html) **Introduction to Agile project management** Now that you have learned about Git and GitHub project tracking features, we will learn the basics of Agile project management and how you can use GitHub tools to help implement that. Agile project management focuses how to structure team communication and workflow to facilitate peer collaboration and help, get quick feedback from end-users, allow responsiveness to change, and focus on the key tasks. This week, I'll show you how to use Kanban, an Agile methodology, with GitHub Project Boards with and without automation. [Lecture notes](week3-introtoagile.html) - [Slides](week3-introtoagile-slides.html) -  [Lecture video](https://youtu.be/uBTzghMCDaQ) - [Q&A](week3.html)
 

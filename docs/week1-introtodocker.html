@@ -348,51 +348,15 @@ div.tocify {
       <a href="week1.html">
         <span class="fa fa-cogs"></span>
          
-        Week 1 Intro to Git
+        Week 1 Intro to Docker
       </a>
     </li>
-    <li>
-      <a href="week2.html">
-        <span class="fab fa-github-alt"></span>
-         
-        Week 2 More Git/Intro to GitHub
-      </a>
-    </li>
-    <li>
-      <a href="week3.html">
-        <span class="fa fa-recycle"></span>
-         
-        Week 3 Intro to Agile and Kanban
-      </a>
-    </li>
-    <li>
-      <a href="week4.html">
-        <span class="fa fa-recycle"></span>
-         
-        Week 4 Intro to Scrum
-      </a>
-    </li>
-    <li>
-      <a href="week5.html">
-        <span class="fa fa-box"></span>
-         
-        Week 5 Part 1. R packages
-      </a>
-    </li>
-    <li>
-      <a href="week6.html">
-        <span class="fa fa-box"></span>
-         
-        Week 6 Part 2. R packages
-      </a>
-    </li>
-    <li>
-      <a href="week7.html">
-        <span class="fa fa-file-code"></span>
-         
-        Week 7 Part 1. R Markdown
-      </a>
-    </li>
+    <li class="dropdown-header">Week 2 Setting up a JupyterHub</li>
+    <li class="dropdown-header">Week 3 Remote-sensing Data in R</li>
+    <li class="dropdown-header">Week 4 Remote sensing Data in R</li>
+    <li class="dropdown-header">Week 5 Part 1. SDMs</li>
+    <li class="dropdown-header">Week 6 Part 2. SDMs</li>
+    <li class="dropdown-header">Week 7 Part 3. SDMs</li>
     <li>
       <a href="week8.html">
         <span class="fa fa-file-code"></span>
@@ -419,14 +383,11 @@ div.tocify {
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/RVerse-Tutorials/RWorkflow-NWFSC-2022">
+  <a href="https://github.com/RVerse-Tutorials/RWorkflow-NWFSC-2023">
     <span class="fab fa-github"></span>
      
     Repo
   </a>
-</li>
-<li>
-  <a href="https://github.com/orgs/RWorkflow-Workshop">Org</a>
 </li>
       </ul>
     </div><!--/.nav-collapse -->
@@ -442,6 +403,10 @@ div.tocify {
 </div>
 
 
+<!--
+for Mac users on Apple chip
+https://levelup.gitconnected.com/docker-on-apple-silicon-mac-how-to-run-x86-containers-with-rosetta-2-4a679913a0d5
+-->
 <div id="what-is-docker" class="section level1">
 <h1>What is Docker?</h1>
 <p>ChatGPT says: <em>Docker is an open-source platform that allows you
@@ -466,7 +431,8 @@ class="uri">https://docs.docker.com/engine/install/</a></p>
 </div>
 <div id="lets-run-a-container" class="section level1">
 <h1>Let’s run a container</h1>
-<p>So after you have Docker installed, you can run a container.</p>
+<p>Part 1 <a href="https://youtu.be/pQT_ybXoJtI">Video</a></p>
+<p>After you have Docker installed, you can run a container.</p>
 <pre><code>docker run -d -p 80:80 docker/getting-started</code></pre>
 <ul>
 <li><code>docker</code> call Docker</li>
@@ -486,9 +452,10 @@ DockerHub</li>
 check if there is <code>linux/arm64</code> listed. This means there is a
 version of the container that will work on your operating system. If you
 only see <code>linux/amd64</code>, you can try emulation but it might
-not work. To run in emulation mode, you add this to your
-<code>docker run</code> call: <code>--platform linux/amd64</code>. But
-your application might not work.</p>
+not work. To increase success, make sure you have a recent version of
+Docker installed. To run in emulation mode (Rosetta), you add this to
+your <code>docker run</code> call:
+<code>--platform linux/amd64</code>.</p>
 </div>
 <div id="run-the-container" class="section level2">
 <h2>Run the container</h2>
@@ -506,7 +473,68 @@ see the running container in the Docker app.</p>
 <h2>Now we can open our app</h2>
 <p>Head to the browser and type</p>
 <pre><code>http://localhost:80</code></pre>
-<p><img src="images/docker-tutorial-browser.png" /></p>
+<p><img src="images/docker-tutorial-browser.png" /> ## Why is the port
+listed twice?</p>
+<p>It’s not exactly. In <code>80:80</code>, the second # is the port
+that the application is listening under and your application
+documentation should tell you if it is listening on a specific port. The
+first one is the port you want to use in your browser. So we could do
+<code>8181:80</code> and go to our app with
+<code>localhost:8181</code>.</p>
+</div>
+</div>
+<div id="rocker-docker-images" class="section level1">
+<h1>Rocker docker images</h1>
+<p>Part 2 <a href="https://youtu.be/fv4i0rDcr0s">Video</a></p>
+<p><a
+href="https://jsta.github.io/r-docker-tutorial/02-Launching-Docker.html"
+class="uri">https://jsta.github.io/r-docker-tutorial/02-Launching-Docker.html</a></p>
+<p>Note the rocker apps are listening on port 8787, so make sure the
+number after the <code>:</code> is 8787. The first number is what you
+will use in the browser. So if you did <code>8080:8787</code>, then go
+to <code>localhost:8080</code>.</p>
+<pre><code>docker run --rm -ti -e PASSWORD=yourpassword -p 8787:8787 rocker/rstudio</code></pre>
+<div id="using-a-versioned-rocker-image" class="section level2">
+<h2>Using a versioned rocker image</h2>
+<p>The June 2023 announcement of the retirement of popular spatial
+packages in R is a good example of when the versioned rocker images are
+useful.</p>
+<p><img src="images/grdal_tweet.png" /></p>
+<p>If we don’t want to update our code but it uses R packages that have
+been retired, we can use Docker to open a version of R and <strong>a
+snapshot of the R packages at that time</strong>.</p>
+</div>
+<div id="lets-spin-a-r-4.1-container" class="section level2">
+<h2>Let’s spin a R 4.1 container</h2>
+<p>Everyone except MacOS with Apple chip.</p>
+<pre><code>docker run \
+  -d \
+  -p 8181:8787 \
+  -e USER=test \
+  -e PASSWORD=test \
+  rocker/geospatial:4.1</code></pre>
+<p>MacOS with Apple chip add <code>--platform linux/amd64</code> so run
+this</p>
+<pre><code>docker run --platform linux/amd64 \
+  -d \
+  -p 8181:8787 \
+  -e USER=test \
+  -e PASSWORD=test \
+  rocker/geospatial:4.1</code></pre>
+</div>
+<div id="changing-the-rocker-image" class="section level2">
+<h2>Changing the rocker image</h2>
+<!--
+Notes
+https://stackoverflow.com/questions/45289764/install-r-packages-using-docker-file
+-->
+<pre><code>FROM rocker/tidyverse:latest
+
+# Install R packages
+RUN install2.r --error \
+    methods \
+    jsonlite \
+    tseries</code></pre>
 </div>
 </div>
 
