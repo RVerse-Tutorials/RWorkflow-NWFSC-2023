@@ -423,29 +423,47 @@ system tools, libraries, and settings.</em></p>
 dockerfile is what defines our virtual environment and the tools
 (software) that we’ll have in that environment. The systems that set-up
 your VM have docker installed.</p>
-<p>But we can also use docker containers on our personal computers.
-That’s what we’ll do today. <em>Note, Docker Desktop requires a license
-for use on government computers.</em></p>
-<p><a href="https://docs.docker.com/engine/install/"
-class="uri">https://docs.docker.com/engine/install/</a></p>
+<p>Today I will show Docker using GitHub Codespaces since Docker Desktop
+requires a license for use on government computers and also Docker can
+allow root access to your computer so needs a special set-up for
+organizations that don’t allow root access.</p>
 </div>
+</div>
+<div id="open-a-codespace" class="section level1">
+<h1>Open a Codespace</h1>
+<ol style="list-style-type: decimal">
+<li>Go here <a href="https://github.com/RVerse-Tutorials/Test"
+class="uri">https://github.com/RVerse-Tutorials/Test</a></li>
+<li>Click ‘Code’ tab and then open Codespace</li>
+</ol>
 </div>
 <div id="lets-run-a-container" class="section level1">
 <h1>Let’s run a container</h1>
 <p>Part 1 <a href="https://youtu.be/pQT_ybXoJtI">Video</a></p>
 <p>After you have Docker installed, you can run a container.</p>
-<pre><code>docker run -d -p 80:80 docker/getting-started</code></pre>
+<pre><code>docker run -d -p 80:80 --name test docker/getting-started</code></pre>
 <ul>
 <li><code>docker</code> call Docker</li>
 <li><code>run</code> run a container</li>
 <li><code>-d</code> in detached setting</li>
 <li><code>-p</code> use this port so <code>http://localhost:80</code> is
 how you open the application in a browser</li>
+<li><code>--name</code> give the container a name</li>
 <li><code>docker/getting-started</code> the name of the container on
 DockerHub</li>
 </ul>
-<div id="first-lets-look-at-this-on-dockerhub" class="section level2">
-<h2>First let’s look at this on DockerHub</h2>
+<div id="why-is-the-port-listed-twice" class="section level3">
+<h3>Why is the port listed twice?</h3>
+<p>It’s not exactly. In <code>80:80</code>, the second <code>#</code> is
+the port that the application is listening under and your application
+documentation should tell you if it is listening on a specific port. The
+first one is the port you want to use in your browser. So we could do
+<code>8181:80</code> and go to our app with
+<code>localhost:8181</code>.</p>
+</div>
+<div id="lets-take-a-look-at-the-image" class="section level2">
+<h2>Let’s take a look at the image</h2>
+<p>Before we blinding run a container, let’s take a look at it.</p>
 <p><img src="images/docker-tutorial.png" width="800" /></p>
 <p>Click on tags</p>
 <p><img src="images/Docker-tag.png" width="800" /></p>
@@ -462,30 +480,23 @@ your <code>docker run</code> call:
 <h2>Run the container</h2>
 <p>Open a terminal (or shell) window on your computer, and type or paste
 this in:</p>
-<pre><code>docker run -d -p 80:80 docker/getting-started</code></pre>
+<pre><code>docker run -d -p 80:80 --name test docker/getting-started</code></pre>
 <p>The first time it’ll download the container. Once it is done, we can
 see the running container in the Docker app or run</p>
 <pre><code>docker ps</code></pre>
 <p>in the terminal to see the running container.</p>
 </div>
-<div id="lets-look-at-the-docker-app" class="section level2">
-<h2>Let’s look at the Docker app</h2>
-<p><img src="images/docker-app.png" width="800" /></p>
-</div>
 <div id="now-we-can-open-our-app" class="section level2">
 <h2>Now we can open our app</h2>
-<p>Head to the browser and type</p>
+<p>Head to ports tab and click the little world icon to open the port in
+a browser.</p>
+</div>
+<div id="aside-docker-desktop" class="section level2">
+<h2>Aside: Docker Desktop</h2>
+<p>I am going to run the same command on my laptop so you can see how to
+open the container on your personal computer.</p>
 <pre><code>http://localhost:80</code></pre>
 <p><img src="images/docker-tutorial-browser.png" /></p>
-</div>
-<div id="why-is-the-port-listed-twice" class="section level2">
-<h2>Why is the port listed twice?</h2>
-<p>It’s not exactly. In <code>80:80</code>, the second <code>#</code> is
-the port that the application is listening under and your application
-documentation should tell you if it is listening on a specific port. The
-first one is the port you want to use in your browser. So we could do
-<code>8181:80</code> and go to our app with
-<code>localhost:8181</code>.</p>
 </div>
 </div>
 <div id="rocker-docker-images" class="section level1">
@@ -498,7 +509,7 @@ class="uri">https://jsta.github.io/r-docker-tutorial/02-Launching-Docker.html</a
 number after the <code>:</code> is 8787. The first number is what you
 will use in the browser. So if you did <code>8080:8787</code>, then go
 to <code>localhost:8080</code>.</p>
-<pre><code>docker run --rm -ti -e PASSWORD=yourpassword -p 8787:8787 rocker/rstudio</code></pre>
+<pre><code>docker run --rm -ti -e PASSWORD=test -p 8787:8787 --name test2 rocker/rstudio</code></pre>
 <div id="using-a-versioned-rocker-image" class="section level2">
 <h2>Using a versioned rocker image</h2>
 <p>The June 2023 announcement of the retirement of popular spatial
@@ -509,14 +520,15 @@ useful.</p>
 been retired, we can use Docker to open a version of R and <strong>a
 snapshot of the R packages at that time</strong>.</p>
 </div>
-<div id="lets-spin-a-r-4.1-container" class="section level2">
-<h2>Let’s spin a R 4.1 container</h2>
+<div id="lets-spin-up-a-r-4.1-container" class="section level2">
+<h2>Let’s spin up a R 4.1 container</h2>
 <p>Everyone except MacOS with Apple chip.</p>
 <pre><code>docker run \
   -d \
   -p 8181:8787 \
   -e USER=test \
   -e PASSWORD=test \
+  -name geospatial \
   rocker/geospatial:4.1</code></pre>
 <p>MacOS with Apple chip add <code>--platform linux/amd64</code> so run
 this</p>
@@ -540,6 +552,15 @@ RUN install2.r --error \
     methods \
     jsonlite \
     tseries</code></pre>
+</div>
+<div id="docker-hub-to-host-you-own-images" class="section level2">
+<h2>Docker Hub to host you own images</h2>
+<p><a
+href="https://hub.docker.com/repository/docker/eeholmes/iopython/general"
+class="uri">https://hub.docker.com/repository/docker/eeholmes/iopython/general</a></p>
+</div>
+<div id="connecting-to-github" class="section level2">
+<h2>Connecting to GitHub</h2>
 </div>
 </div>
 

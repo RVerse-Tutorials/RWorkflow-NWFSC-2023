@@ -27,9 +27,12 @@ ChatGPT says: *Docker is an open-source platform that allows you to automate the
 
 When working with virtual machines (VM) (think say Codespaces), a dockerfile is what defines our virtual environment and the tools (software) that we'll have in that environment. The systems that set-up your VM have docker installed.
 
-But we can also use docker containers on our personal computers. That's what we'll do today. *Note, Docker Desktop requires a license for use on government computers.*
+Today I will show Docker using GitHub Codespaces since Docker Desktop requires a license for use on government computers and also Docker can allow root access to your computer so needs a special set-up for organizations that don't allow root access.
 
-<https://docs.docker.com/engine/install/>
+# Open a Codespace
+
+1. Go here https://github.com/RVerse-Tutorials/Test
+2. Click 'Code' tab and then open Codespace
 
 # Let's run a container
 
@@ -38,16 +41,24 @@ Part 1 [Video](https://youtu.be/pQT_ybXoJtI)
 After you have Docker installed, you can run a container.
 
 ```         
-docker run -d -p 80:80 docker/getting-started
+docker run -d -p 80:80 --name test docker/getting-started
 ```
 
 -   `docker` call Docker
 -   `run` run a container
 -   `-d` in detached setting
 -   `-p` use this port so `http://localhost:80` is how you open the application in a browser
+-   `--name` give the container a name
 -   `docker/getting-started` the name of the container on DockerHub
 
-## First let's look at this on DockerHub
+
+### Why is the port listed twice?
+
+It's not exactly. In `80:80`, the second `#` is the port that the application is listening under and your application documentation should tell you if it is listening on a specific port. The first one is the port you want to use in your browser. So we could do `8181:80` and go to our app with `localhost:8181`.
+
+## Let's take a look at the image
+
+Before we blinding run a container, let's take a look at it.
 
 ![](images/docker-tutorial.png){width="800"}
 
@@ -62,7 +73,7 @@ If you are on a Mac with an Apple chip (so M1, M2, etc), you need to check if th
 Open a terminal (or shell) window on your computer, and type or paste this in:
 
 ```         
-docker run -d -p 80:80 docker/getting-started
+docker run -d -p 80:80 --name test docker/getting-started
 ```
 
 The first time it'll download the container. Once it is done, we can see the running container in the Docker app or run 
@@ -73,13 +84,14 @@ docker ps
 
 in the terminal to see the running container.
 
-## Let's look at the Docker app
-
-![](images/docker-app.png){width="800"}
 
 ## Now we can open our app
 
-Head to the browser and type
+Head to ports tab and click the little world icon to open the port in a browser.
+
+## Aside: Docker Desktop
+
+I am going to run the same command on my laptop so you can see how to open the container on your personal computer.
 
 ```         
 http://localhost:80
@@ -87,9 +99,6 @@ http://localhost:80
 
 ![](images/docker-tutorial-browser.png) 
 
-## Why is the port listed twice?
-
-It's not exactly. In `80:80`, the second `#` is the port that the application is listening under and your application documentation should tell you if it is listening on a specific port. The first one is the port you want to use in your browser. So we could do `8181:80` and go to our app with `localhost:8181`.
 
 # Rocker docker images
 
@@ -100,7 +109,7 @@ Part 2 [Video](https://youtu.be/fv4i0rDcr0s)
 Note the rocker apps are listening on port 8787, so make sure the number after the `:` is 8787. The first number is what you will use in the browser. So if you did `8080:8787`, then go to `localhost:8080`.
 
 ```         
-docker run --rm -ti -e PASSWORD=yourpassword -p 8787:8787 rocker/rstudio
+docker run --rm -ti -e PASSWORD=test -p 8787:8787 --name test2 rocker/rstudio
 ```
 
 
@@ -113,7 +122,7 @@ The June 2023 announcement of the retirement of popular spatial packages in R is
 
 If we don't want to update our code but it uses R packages that have been retired, we can use Docker to open a version of R and **a snapshot of the R packages at that time**.
 
-## Let's spin a R 4.1 container
+## Let's spin up a R 4.1 container
 
 Everyone except MacOS with Apple chip.
 
@@ -123,6 +132,7 @@ docker run \
   -p 8181:8787 \
   -e USER=test \
   -e PASSWORD=test \
+  -name geospatial \
   rocker/geospatial:4.1
 ```
 
@@ -154,3 +164,10 @@ RUN install2.r --error \
     jsonlite \
     tseries
 ```
+
+## Docker Hub to host you own images
+
+https://hub.docker.com/repository/docker/eeholmes/iopython/general
+
+## Connecting to GitHub
+
