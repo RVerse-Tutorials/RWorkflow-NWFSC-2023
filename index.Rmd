@@ -22,12 +22,6 @@ These short sessions (45min to 1hr) will be focused on R, RStudio and GitHub too
 
 **About the instructor Eli Holmes**: I am a modeler/applied mathematician. I develop R packages for public use. I teach time-series analysis at the University of Washington (using R) and I teach workshops on R and reproducible research and am heavily involved in efforts to support transition to Open Science workflows within NOAA Fisheries. [website](http://eeholmes.github.io/)
 
-<div class="column-left">
-
-### Video links for the sessions
-
-TBD
-
 <hr>
 
 ### 2023 Topics
