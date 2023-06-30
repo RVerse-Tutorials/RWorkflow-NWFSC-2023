@@ -29,7 +29,7 @@ I labelled this lecture "Intro to Docker", because Docker and Docker files or im
 
 ChatGPT says: *Docker is an open-source platform that allows you to automate the deployment and management of applications within software containers. It provides a way to package software and its dependencies into a standardized unit called a container. These containers are lightweight, portable, and self-sufficient, containing everything needed to run the application, including the code, runtime, system tools, libraries, and settings.*
 
-![](images/horizontal-logo-monochromatic-white.png)
+![](images/horizontal-logo-monochromatic-white.png){width=50%}
 
 
 Today I will show Docker using GitHub Codespaces since Docker Desktop requires a license for use on government computers and also Docker can allow root access to your computer so needs a special set-up for organizations that don't allow root access.
@@ -41,7 +41,7 @@ Today I will show Docker using GitHub Codespaces since Docker Desktop requires a
 
 ## Let's run the Docker tutorial image
 
-Before we willy-nilly run a random container, let's take a look at the image will be using: https://hub.docker.com/r/docker/getting-started
+Before we willy-nilly run a random container, let's take a look at the image that we will be using: https://hub.docker.com/r/docker/getting-started
 
 ![](images/docker-tutorial.png){width="800"}
 
@@ -54,7 +54,7 @@ You can follow the links on the DockerHub page to get more info.
 
 ## Open a GitHub Codespace
 
-1. Go here to any GitHub repo. It really doesn't matter which, we just want the Code tab. For example, go here: https://github.com/RVerse-Tutorials/Test
+1. Go to any GitHub repo. It really doesn't matter which, we just want the Code tab. For example, go here: https://github.com/RVerse-Tutorials/Test
 2. Click the 'Code' button, then click Codespace tab, and then click 'Open codespace on main'.
 
 ## Let's run a container
@@ -75,7 +75,7 @@ docker run -d -p 80:80 --name test docker/getting-started
 
 ### Why is the port listed twice?
 
-It's not exactly. In `80:80`, the second `#` is the port that the application is listening under and your application documentation should tell you if it is listening on a specific port. The first one is the port you want to use in your browser. So we could do `8181:80` and go to our app on port `8181`.
+It's not exactly. In `80:80`, the second `#` is the port that the application is listening under and your application documentation should tell you if it is listening on a specific port. The first one is the port you want to use in your browser. So we could do `8181:80` and go to our app on port `8181`. 
 
 The first time it'll download the container. Once it is done, we can see the running container in the ports tab or run 
 
@@ -95,7 +95,7 @@ When you run the code above, you will (likely) see a pop-up like so, but I have 
 Instead, I go to the ports tab and click the little world icon next to my application to open the port in a browser. The little world icon is quite hidden; you need to roll over the application link.
 
 ![](images/docker-codespaces-port-tab.png)
-Now your application will open in your browser.
+Now your application will open in your browser. *It didn't!* Just reload the page.
 
 ## Run RStudio within a Codespace
 
@@ -109,7 +109,13 @@ Go back to the terminal (in your Codespace). From the Rocker Project page, it sa
 docker run --rm -ti -d -e PASSWORD=yourpassword -p 8787:8787 rocker/rstudio
 ```
 
-`--rm` means to remove the container when we stop it. `-ti` means interactive mode with a pseudo-tty. No idea why we need that. `-e` sets the password for our RStudio server. Username will be `rstudio`. `-p` is the ports. The second # (after `:`) is set by the image and needs to be `8787`. The first is up to you. Set to whatever (is open).
+`--rm` means to remove the container when we stop it. `-ti` means interactive mode with a pseudo-tty. This is not needed but gives some log output. `-e` sets the password for our RStudio server. Username will be `rstudio`. `-p` is the ports. The second # (after `:`) is set by the image and needs to be `8787`. The first is up to you. Set to whatever (is open).
+
+Note, most of those flags are not needed. This works fine. The `-d` is handy just so you get back to the command line after running the command.
+
+```
+docker run -d -e PASSWORD=yourpassword -p 8787:8787 rocker/rstudio
+```
 
 ## Connecting RStudio to GitHub
 
@@ -186,13 +192,13 @@ This means there is a version of the container that will work on your architectu
 
 ## Install a way to run containers
 
-* [Docker Desktop](https://www.docker.com/products/docker-desktop/) If you are on a managed computer (e.g. government), you might not be able to install Docker due to a security risk associated with Docker running containers as root user.
+* [Docker Desktop](https://www.docker.com/products/docker-desktop/) If you are on a managed computer (e.g. government), you might not be able to install Docker due to a security risk associated with Docker running containers as root user. Also Docker Desktop requires a license ($) if you are using on a government computer.
 
 **Heads up Windows users** You need root access to install and you need to add your user name to the `docker-users` group. You may need to install WSL2. You'll know because it will complain. You may need to uninstall and reinstall and restart a few times. So make sure you have someone with root access helping you.
 
 **Important!** I am showing `docker` commands from the terminal, but I started Docker Desktop first which starts the docker service. If I had not done this, I would get an error regarding the docker daemon not running.
 
-* [Podman](https://podman.io/) is a more secure option since it does not run containers as root by default. Your organization is more likely to allow Podman. On my Mac M1, I have had a lot headaches running the rocker images though I did get it to run in the end.
+* [Podman](https://podman.io/) is a more secure option since it does not run containers as root by default. Your organization is more likely to allow Podman.
 
 ## Run rocker containers
 

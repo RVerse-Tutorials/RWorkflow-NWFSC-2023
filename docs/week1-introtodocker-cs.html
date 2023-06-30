@@ -425,7 +425,8 @@ dependencies into a standardized unit called a container. These
 containers are lightweight, portable, and self-sufficient, containing
 everything needed to run the application, including the code, runtime,
 system tools, libraries, and settings.</em></p>
-<p><img src="images/horizontal-logo-monochromatic-white.png" /></p>
+<p><img src="images/horizontal-logo-monochromatic-white.png"
+style="width:50.0%" /></p>
 <p>Today I will show Docker using GitHub Codespaces since Docker Desktop
 requires a license for use on government computers and also Docker can
 allow root access to your computer so needs a special set-up for
@@ -437,7 +438,7 @@ organizations that don’t allow root access.</p>
 <div id="lets-run-the-docker-tutorial-image" class="section level2">
 <h2>Let’s run the Docker tutorial image</h2>
 <p>Before we willy-nilly run a random container, let’s take a look at
-the image will be using: <a
+the image that we will be using: <a
 href="https://hub.docker.com/r/docker/getting-started"
 class="uri">https://hub.docker.com/r/docker/getting-started</a></p>
 <p><img src="images/docker-tutorial.png" width="800" /></p>
@@ -448,8 +449,8 @@ class="uri">https://hub.docker.com/r/docker/getting-started</a></p>
 <div id="open-a-github-codespace" class="section level2">
 <h2>Open a GitHub Codespace</h2>
 <ol style="list-style-type: decimal">
-<li>Go here to any GitHub repo. It really doesn’t matter which, we just
-want the Code tab. For example, go here: <a
+<li>Go to any GitHub repo. It really doesn’t matter which, we just want
+the Code tab. For example, go here: <a
 href="https://github.com/RVerse-Tutorials/Test"
 class="uri">https://github.com/RVerse-Tutorials/Test</a></li>
 <li>Click the ‘Code’ button, then click Codespace tab, and then click
@@ -493,7 +494,8 @@ browser’. So I close that pop-up.</p>
 to my application to open the port in a browser. The little world icon
 is quite hidden; you need to roll over the application link.</p>
 <p><img src="images/docker-codespaces-port-tab.png" /> Now your
-application will open in your browser.</p>
+application will open in your browser. <em>It didn’t!</em> Just reload
+the page.</p>
 </div>
 </div>
 <div id="run-rstudio-within-a-codespace" class="section level2">
@@ -507,12 +509,16 @@ Codespaces.</p>
 page, it says to run this to open RStudio:</p>
 <pre><code>docker run --rm -ti -d -e PASSWORD=yourpassword -p 8787:8787 rocker/rstudio</code></pre>
 <p><code>--rm</code> means to remove the container when we stop it.
-<code>-ti</code> means interactive mode with a pseudo-tty. No idea why
-we need that. <code>-e</code> sets the password for our RStudio server.
-Username will be <code>rstudio</code>. <code>-p</code> is the ports. The
-second # (after <code>:</code>) is set by the image and needs to be
-<code>8787</code>. The first is up to you. Set to whatever (is
-open).</p>
+<code>-ti</code> means interactive mode with a pseudo-tty. This is not
+needed but gives some log output. <code>-e</code> sets the password for
+our RStudio server. Username will be <code>rstudio</code>.
+<code>-p</code> is the ports. The second # (after <code>:</code>) is set
+by the image and needs to be <code>8787</code>. The first is up to you.
+Set to whatever (is open).</p>
+<p>Note, most of those flags are not needed. This works fine. The
+<code>-d</code> is handy just so you get back to the command line after
+running the command.</p>
+<pre><code>docker run -d -e PASSWORD=yourpassword -p 8787:8787 rocker/rstudio</code></pre>
 </div>
 <div id="connecting-rstudio-to-github" class="section level2">
 <h2>Connecting RStudio to GitHub</h2>
@@ -600,7 +606,8 @@ you have a recent version of Docker installed. To run in emulation mode
 <li><a href="https://www.docker.com/products/docker-desktop/">Docker
 Desktop</a> If you are on a managed computer (e.g. government), you
 might not be able to install Docker due to a security risk associated
-with Docker running containers as root user.</li>
+with Docker running containers as root user. Also Docker Desktop
+requires a license ($) if you are using on a government computer.</li>
 </ul>
 <p><strong>Heads up Windows users</strong> You need root access to
 install and you need to add your user name to the
@@ -615,8 +622,7 @@ the docker daemon not running.</p>
 <ul>
 <li><a href="https://podman.io/">Podman</a> is a more secure option
 since it does not run containers as root by default. Your organization
-is more likely to allow Podman. On my Mac M1, I have had a lot headaches
-running the rocker images though I did get it to run in the end.</li>
+is more likely to allow Podman.</li>
 </ul>
 </div>
 <div id="run-rocker-containers" class="section level2">
