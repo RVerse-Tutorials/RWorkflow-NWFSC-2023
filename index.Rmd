@@ -28,42 +28,16 @@ These short sessions (45min to 1hr) will be focused on R, RStudio and GitHub too
 
 TBD
 
-### Set-up for the workshop
-
-For weeks 1-4, you'll need a [GitHub](https://github.com/) account and [GitHub Desktop](https://desktop.github.com/) installed. For weeks 5-6, you'll want R and RStudio  installed on your computer or you can use [RStudio Cloud](https://rstudio.cloud/). If you do the latter, you don't need to install any software.
-
-# ----
+<hr>
 
 ### 2023 Topics
 
 
 ### Part 1
 
-* [June X](week1-introtodocker.html) **Introduction to Docker for R users** I will introduce you to using Docker to run R and RStudio in containers. [Lecture notes](week1-introtodocker.html)
+* [June 27](week1-introtodocker-cs.html) **Introduction to Docker for R users** I will introduce you to using Docker to run R and RStudio in containers. [Lecture notes](week1-introtodocker-cs.html)
 <!-- - [Lecture video](https://youtu.be/M1sOC4046PQ) - [Q&A](week1.html) -->
 
-* [June X](week2-github.html) **More Git skills + GitHub issues, organizations, and releases** This week, I'll cover the basics of reverting changes and using Git branches. Then we'll learn about key GitHub tools for managing your work and collaborating: issues, discussion threads, wikis, organizations and releases. These features are key to helping you organize your work and keep track of what needs to be done. These features also allow a team to collaborate effectively together on a repository. Next week, we'll start learning about GitHub project boards. [Lecture notes](week2-github.html) - [Lecture video](https://youtu.be/NrHTf-TF_7A) - [Q&A](week2.html)
-
-* [June 3](week3-introtoagile-slides.html) **Introduction to Agile project management** Now that you have learned about Git and GitHub project tracking features, we will learn the basics of Agile project management and how you can use GitHub tools to help implement that. Agile project management focuses how to structure team communication and workflow to facilitate peer collaboration and help, get quick feedback from end-users, allow responsiveness to change, and focus on the key tasks. This week, I'll show you how to use Kanban, an Agile methodology, with GitHub Project Boards with and without automation. [Lecture notes](week3-introtoagile.html) - [Slides](week3-introtoagile-slides.html) -  [Lecture video](https://youtu.be/uBTzghMCDaQ) - [Q&A](week3.html)
-
-* [June 10](week4-scrum-slides.html) **Intro to Scrum using GitHub issues and project boards** This week will focus on the most popular Agile methodology: Scrum. Although Scrum is associated with software development, it is used in many different fields. Scrum is a lightweight and flexible framework that helps teams to work together better and learn with each cycle of work. It has 3 roles, 5 events (steps) that the team goes through during a time-boxed period of work. I will show you how to set up and run a Scrum Sprint in GitHub. The real power of Scrum comes with teams by promoting high functioning teamwork, but you can use Scrum solo; you’ll just have to ‘switch hats’ when you take on different roles. [Slides](week4-scrum-slides.html) -  [Lecture video](https://youtu.be/mPyT0g3kBQE) - [Q&A](week4.html)
-
-### Part 2
-
-* [July 8](week5-introtopackages.html) **Intro to creating R packages** This week I will show you how to make an R package for code or data. RStudio makes this incredibly easy; literally 2-3 clicks. R packages are not just for work that you share with others. Most of my code projects are organized into an R package and definitely any project that I have that involves data and code is organized into an R package. The package framework helps you write robust and well documented code. It also makes it easy to bundle data with code. By the end of this session, you will be able to build your own mini R package. [Lecture notes](week5-introtopackages.html) - [Lecture video](https://youtu.be/LWWfRlyBbVs) - [Q&A](week5.html)
-
-* [July 15](week6-morewithpackages.html) **Beyond the basics with R packages** This lecture will take you past the basics. In the first half, we'll dive a bit deeper into {roxygen2} documentation. Gone are the days when you need to write documentation manuals. Roxygen  automatically assembled your headers into documentation (help files, manuals, etc). Once your package is documented with Roxygen, creating a website is simple with pkgdown. In the second half, I give you a brief overview of the very handy {usethis} package. We'll put our package on GitHub so others can install it. I briefly show you how we use GitHub Actions for automated pkgdown updating when we change our package files. 
-[Lecture notes](week6-morewithpackages.html) - [Lecture video](https://youtu.be/SxDLLtaYmj8) - [Q&A](week6.html)
-
-* [July 22](week7-rmdreports-part1.html) **R Markdown for reports Part 1: integrating text and data tables** There are many online tutorials for R Markdown which will cover the basics. I will focus on R Markdown for fisheries (or other) reports. When the data change (which happens often), we have to remake tables (and graphs) and update the numbers in text. For big reports, this is time-consuming and creates errors. In this 2 part series, I'll show you how to use R Markdown to automate this process, so you are not manually remaking reports. 
-[Lecture notes](week7-rmdreports-part1.html) - [Lecture video](https://youtu.be/zPzhQYuWO68) - [Q&A](week7.html)
-
-* [Aug 5](week8-rmdreports-part2.html) **R Markdown for reports Part 2: creating a report**
-Part 1, introduced you to some of the elements of R Markdown used in a report. In part 2, we'll put these elements together to create a report. You'll also learn how to use Word templates to give your report the right "look", i.e. like an official report not a generic R Markdown document. I’ll give a tour of a variety of fisheries reports using R Markdown for inspiration; along with their GitHub repositories. I'll also give a brief intro to GitHub Actions which are used to automate rebuilding of online reports.
-[Lecture notes](week8-rmdreports-part2.html) - [Lecture video](https://youtu.be/u79WfOWAoN4) - [Q&A](week8.html)
-
-* Video only **Writing tests for R packages and other code** 
-Writing tests and automating quality control for your R packages and code: we know we should do it, but for most of us, it is the last thing we do or want to do. In this session, I’ll get you started writing unit tests using the {testthat} package (the standard). I’ll also give examples of the other types of common tests and some ideas of how to automate these tests with GitHub Actions. The goal is to give you some easy coding habits that will help you incorporate tests without too much extra work.
 
 <hr>
 

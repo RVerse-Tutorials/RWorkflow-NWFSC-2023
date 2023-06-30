@@ -11,9 +11,9 @@ navbar:
     menu:
     - text: Week 1 Intro to Docker
       icon: fa-cogs
-      href: week1.html
-    - text: Week 2 Setting up a JupyterHub
-      icon: fab fa-github-alt
+      href: week1-introtodocker-cs.html
+    - text: Week 2 Creating Docker Images
+      icon: fa-cogs
     - text: Week 3 Remote-sensing Data in R
       icon: fa-recycle
     - text: Week 4 Remote sensing Data in R
@@ -24,9 +24,8 @@ navbar:
       icon: fa-box
     - text: Week 7 Part 3. SDMs
       icon: fa-file-code
-    - text: Week 8 Part 2. Reports with R Markdown/Quarto
-      icon: fa-file-code
-      href: week8.html
+    - text: Week 8 Setting up a JupyterHub
+      icon: fab fa-github-alt
   - text: RVerse
     icon: fas fa-toolbox
     href: https://rverse-tutorials.github.io

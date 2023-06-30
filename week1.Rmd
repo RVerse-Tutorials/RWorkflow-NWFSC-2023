@@ -11,8 +11,7 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Intro to Docker
+## Intro to Docker for R Users
 
-* [Docker Desktop](week1-introtodocker.html)
-* [Docker in GitHub Codespaces](week1-introtodocker-cs.html)
+* [Intro to Docker](week1-introtodocker-cs.html)
 
