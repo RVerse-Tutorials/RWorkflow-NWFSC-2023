@@ -1,5 +1,5 @@
 ---
-title: "Practical R+Git Workflow for Scientists June-July 2023"
+title: "Practical Workflows for Scientists June-July 2023"
 ---
 
 <table style="background-color: blue; width: 100%;">
@@ -16,9 +16,9 @@ title: "Practical R+Git Workflow for Scientists June-July 2023"
 
 <img style="float: right;" src="images/tools-logo-transparent.png" width=30%>
 
-These short sessions (45min to 1hr) will be focused on R, RStudio and GitHub tools and practices for NOAA scientists to help you be **faster, more efficient and organized**. The focus of these workshops is practical skills and tools; they are intended to get you applying the skill immediately in your own work. I will give you links to my and other NOAA GitHub repositories that illustrate more complex examples (that you can copy and build on).
+In 2023, I am focusing on Part 1) cloud computing platforms and Part 2) working with remote-sensing data in R. Why cloud computing? Well the days of doing all your work on a computer with all your software downloaded to that are numbered. It is not a very efficient way to work. It is more efficient to have everyone working on a fully provisioned platform so you can focus on the science and not the software installation headaches. Part 2) is because I am preparing for a couple oceanography hackweeks in late summer. The focus of these workshops is practical skills and tools; they are intended to get you applying the skill immediately in your own work. I will give you links to my and other NOAA GitHub repositories that illustrate more complex examples (that you can copy and build on).
 
-**Target audience**: This year I am assuming that you have an understanding of using Git and GitHub. See the [RWorflow Workshops 2022](https://rverse-tutorials.github.io/RWorkflow-NWFSC-2022/) if not. All sessions (except last) were recorded. The 2023 sessions are in preparation for a hackathon I am teaching in Sept 2023 on Species Distribution Modeling for marine systems. 
+**Target audience**: This year I am assuming that you have an understanding of using Git and GitHub. See the [RWorflow Workshops 2022](https://rverse-tutorials.github.io/RWorkflow-NWFSC-2022/) if not. All sessions (except last) were recorded.
 
 **About the instructor Eli Holmes**: I am a modeler/applied mathematician. I develop R packages for public use. I teach time-series analysis at the University of Washington (using R) and I teach workshops on R and reproducible research and am heavily involved in efforts to support transition to Open Science workflows within NOAA Fisheries. [website](http://eeholmes.github.io/)
 
@@ -27,9 +27,13 @@ These short sessions (45min to 1hr) will be focused on R, RStudio and GitHub too
 ### 2023 Topics
 
 
-### Part 1
-
 * [June 27](week1-introtodocker-cs.html) **Introduction to Docker for R users** I will introduce you to using Docker to run R and RStudio in containers. [Lecture notes](week1-introtodocker-cs.html)
+* [July 7]() **Customizing Docker images** We will learn how to create customized Docker files and how to build your own docker images that you'll can store on Docker Hub.
+* [July 14]() **Part 1. Intro to remote sensing data with R**
+* [July 21]() **Part 2. Intro to remote sensing data with R**
+* [July 28]() **Part 1. Intro to marine SDMs with R**
+* [August 4]() **Part 2. Intro to marine SDMs with R**
+
 <!-- - [Lecture video](https://youtu.be/M1sOC4046PQ) - [Q&A](week1.html) -->
 
 
