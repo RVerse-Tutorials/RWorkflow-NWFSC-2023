@@ -253,7 +253,7 @@ docker run \
   -p 8181:8787 \
   -e USER=test \
   -e PASSWORD=test \
-  -name geospatial \
+  --name geospatial \
   rocker/geospatial:4.1
 ```
 
@@ -265,7 +265,7 @@ docker run --platform linux/amd64 \
   -p 8181:8787 \
   -e USER=test \
   -e PASSWORD=test \
-  -name geospatial \
+  --name geospatial \
   rocker/geospatial:4.1
 ```
 
