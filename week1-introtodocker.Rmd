@@ -154,3 +154,7 @@ RUN install2.r --error \
     jsonlite \
     tseries
 ```
+
+## Learn more
+
+[Docker for scientists](https://solutions.posit.co/envs-pkgs/environments/docker/)
