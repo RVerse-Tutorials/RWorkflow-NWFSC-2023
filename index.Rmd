@@ -22,9 +22,11 @@ In 2023, I am focusing on cloud computing platforms and working with NASA EarthD
 
 <hr>
 
+[CLICK HERE TO SIGN UP](https://forms.gle/Y9u2p2bLf7FKtyWE9)
+
 ## Dec 6 - Intro to JupyterHubs
 
-On Dec 6th at 12:30PM PT, I am demo-ing a JupyterHub that I have set up on a Kubernetes Cluster on the NOAA Azure account. If you want to join [ADD CALENDAR](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MjJ0OGo5bGJsZ2xrdmc3NWtpMnNtY244OXVfMjAyMzEyMDZUMjEwMDAwWiBjXzkxNmI2OTQ4ZWYyZWU4YjdkNDljMjg2NjFlZmMwNzk4MzAzYzI3NDJiZTM5OWM5MjkwZmEwMmQ5MzIwYzc2OWVAZw&tmsrc=c_916b6948ef2ee8b7d49c28661efc0798303c2742be399c9290fa02d9320c769e%40group.calendar.google.com) event.
+On Dec 6th at 12:30PM PT, I am demo-ing a JupyterHub that I have set up on a Kubernetes Cluster on the NOAA Azure account. [CLICK HERE TO SIGN UP](https://forms.gle/Y9u2p2bLf7FKtyWE9) &#128031; [Link to calendar event](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MjJ0OGo5bGJsZ2xrdmc3NWtpMnNtY244OXVfMjAyMzEyMDZUMjEwMDAwWiBjXzkxNmI2OTQ4ZWYyZWU4YjdkNDljMjg2NjFlZmMwNzk4MzAzYzI3NDJiZTM5OWM5MjkwZmEwMmQ5MzIwYzc2OWVAZw&tmsrc=c_916b6948ef2ee8b7d49c28661efc0798303c2742be399c9290fa02d9320c769e%40group.calendar.google.com)
 
 In this session, you will get a brief introduction to JupyterHubs, which is a popular platform for cloud computing. It is an open source, provider agnostic (runs on AWS, GCP or Azure), computing platform used across scientific communities for shared computing environments. You'll get to play around on a JupyterHub set up for geospatial analyses with R or Python using either Jupyter notebooks or RStudio. I will discuss how cloud computing platforms streamline and accelerate science innovation by increasing reproducibility and removing the "set-up" phase of a computing environment. This is especially important with big data geospatial analysis as the 'set-up' phase can be tricky and time-consuming.
 
@@ -34,7 +36,7 @@ If you want to get on the JupyterHub during the intro session, I will need your 
 
 ## Dec 19 - Geospatial Data in R HackDay Dec 19th
 
-On Dec 19th 8-3pm PT, I will run a mini NOAA hackday during which we will use the JupyterHub to do a day of geospatial analysis with R and work on projects pitched by the group.  [ADD CALENDAR](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MHM4MWtvNDFvamRrcWNnOHBoMHZvb2VqYWkgY185MTZiNjk0OGVmMmVlOGI3ZDQ5YzI4NjYxZWZjMDc5ODMwM2MyNzQyYmUzOTljOTI5MGZhMDJkOTMyMGM3NjllQGc&tmsrc=c_916b6948ef2ee8b7d49c28661efc0798303c2742be399c9290fa02d9320c769e%40group.calendar.google.com) event.
+On Dec 19th 8-3pm PT, I will run a mini NOAA hackday during which we will use the JupyterHub to do a day of geospatial analysis with R and work on projects pitched by the group.  [CLICK HERE TO SIGN UP](https://forms.gle/Y9u2p2bLf7FKtyWE9) &#128031; [Link to calendar event](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MHM4MWtvNDFvamRrcWNnOHBoMHZvb2VqYWkgY185MTZiNjk0OGVmMmVlOGI3ZDQ5YzI4NjYxZWZjMDc5ODMwM2MyNzQyYmUzOTljOTI5MGZhMDJkOTMyMGM3NjllQGc&tmsrc=c_916b6948ef2ee8b7d49c28661efc0798303c2742be399c9290fa02d9320c769e%40group.calendar.google.com)
 
 **Schedule**
 
