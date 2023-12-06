@@ -352,7 +352,7 @@ div.tocify {
       </a>
     </li>
     <li>
-      <a href="juyterhub-R.html">
+      <a href="jupyterhub-R.html">
         <span class="fa fa-cogs"></span>
          
         Intro to JupyterHubs with R
@@ -435,11 +435,12 @@ organizations that don’t allow root access.</p>
 </div>
 <div id="open-a-docker-image-on-a-codespace" class="section level1">
 <h1>Open a Docker image on a Codespace</h1>
-<p><a href="https://youtu.be/ZUCHhflSWpQ">Video of this step</a></p>
 <div id="lets-run-the-docker-tutorial-image" class="section level2">
 <h2>Let’s run the Docker tutorial image</h2>
-<p>Before we willy-nilly run a random container, let’s take a look at
-the image that we will be using: <a
+<p><img src="images/youtube-brands.svg" /> <a
+href="https://youtu.be/ZUCHhflSWpQ">Video of this step</a></p>
+<p>Before we run a random container, let’s take a look at the image that
+we will be using: <a
 href="https://hub.docker.com/r/docker/getting-started"
 class="uri">https://hub.docker.com/r/docker/getting-started</a></p>
 <p><img src="images/docker-tutorial.png" width="800" /></p>
@@ -477,7 +478,8 @@ DockerHub</li>
 <h3>Why is the port listed twice?</h3>
 <p>It’s not exactly. In <code>80:80</code>, the second <code>#</code> is
 the port that the application is listening under and your application
-documentation should tell you if it is listening on a specific port. The
+documentation should tell you if it is listening on a specific port (or
+look in the Dockerfile for a line like <code>EXPOSE 80</code>). The
 first one is the port you want to use in your browser. So we could do
 <code>8181:80</code> and go to our app on port <code>8181</code>.</p>
 <p>The first time it’ll download the container. Once it is done, we can
@@ -501,11 +503,12 @@ the page.</p>
 </div>
 <div id="run-rstudio-within-a-codespace" class="section level2">
 <h2>Run RStudio within a Codespace</h2>
-<p><a href="https://www.youtube.com/watch?v=bzvDaQTqgLg">Video of this
+<p><img src="images/youtube-brands.svg" /> <a
+href="https://www.youtube.com/watch?v=bzvDaQTqgLg">Video of this
 step</a></p>
 <p>The <a href="https://rocker-project.org/">Rocker Project</a> makes
-Docker images for running R and RStudio. Let’s spin up RStudio within
-Codespaces.</p>
+Docker <a href="https://rocker-project.org/images/">images</a> for
+running R and RStudio. Let’s spin up RStudio within Codespaces.</p>
 <p>Go back to the terminal (in your Codespace). From the Rocker Project
 page, it says to run this to open RStudio:</p>
 <pre><code>docker run --rm -ti -d -e PASSWORD=yourpassword -p 8787:8787 rocker/rstudio</code></pre>
@@ -520,6 +523,12 @@ Set to whatever (is open).</p>
 <code>-d</code> is handy just so you get back to the command line after
 running the command.</p>
 <pre><code>docker run -d -e PASSWORD=yourpassword -p 8787:8787 rocker/rstudio</code></pre>
+<p>As before, go to the ports tab, roll over the local address and click
+on the globe icon to open. Then login into RStudio with user name
+<code>rstudio</code> and password <code>yourpassword</code>. Note you
+can use the variable <code>DISABLE_AUTH=true</code> to disable the login
+feature:</p>
+<pre><code>docker run -d -e DISABLE_AUTH=true -p 8787:8787 rocker/rstudio</code></pre>
 </div>
 <div id="connecting-rstudio-to-github" class="section level2">
 <h2>Connecting RStudio to GitHub</h2>
@@ -567,10 +576,10 @@ snapshot of the R packages at that time</strong>.</p>
   -p 8181:8787 \
   -e USER=test \
   -e PASSWORD=test \
-  -name geospatial \
+  --name geospatial \
   rocker/geospatial:4.1</code></pre>
-<p>Once this is ready on port 8181, you can go to your RStudio with R
-4.1 and the now expired geo R packages.</p>
+<p>Once this is ready on port 8181, you can open RStudio with R 4.1 and
+the now expired geo R packages.</p>
 </div>
 </div>
 </div>
@@ -598,9 +607,26 @@ Apple chip (so M1, M2, etc), you need to check if there is
 <p>This means there is a version of the container that will work on your
 architecture (Apple chip). If you only see <code>linux/amd64</code>, you
 can try emulation but it might not work. To increase success, make sure
-you have a recent version of Docker installed. To run in emulation mode
-(Rosetta), you add this to your <code>docker run</code> call:
-<code>--platform linux/amd64</code>.</p>
+you have a recent version of Docker Decktop installed. To run in
+emulation mode (Rosetta), you add this to your <code>docker run</code>
+call: <code>--platform linux/amd64</code>. If you have MacOS 12.5+, then
+click the Virtualization Framework setting under Settings in Docker
+Desktop. See <a
+href="https://levelup.gitconnected.com/docker-on-apple-silicon-mac-how-to-run-x86-containers-with-rosetta-2-4a679913a0d5">this</a>
+info and <a
+href="https://github.com/rocker-org/rocker-versioned2/issues/144">this</a>
+specific to Rocker images.</p>
+<p><em>Note</em>, there is a fatal error for M1 Macs with older MacOS
+versions that will cause Docker Desktop to fail to open if you check the
+Virtualization Framework setting. Once that happens, you can’t uncheck
+it that so that Docker opens again (because you can’t get to Docker
+Desktop). If that happens, first go to Activity Monitor and force quit
+Docker and Docker Desktop. Then you have two options: 1) uninstall and
+reinstall Docker Desktop or 2) type
+<code>open ~/Library/Group\ Containers/group.com.docker/settings.json</code>
+in a terminal and look for the line
+<code>"useVirtualizationFramework": true,</code> and change that to
+<code>"useVirtualizationFramework": false,</code>.</p>
 <div id="install-a-way-to-run-containers" class="section level2">
 <h2>Install a way to run containers</h2>
 <ul>
@@ -627,7 +653,7 @@ is more likely to allow Podman.</li>
 </ul>
 </div>
 <div id="run-rocker-containers" class="section level2">
-<h2>Run rocker containers</h2>
+<h2>Run Rocker containers</h2>
 <p>Running containers on your local computer is just like (mostly)
 running containers on your local computer with Docker or Podman. I can
 start containers with either the desktop app or from a terminal.</p>
@@ -638,7 +664,8 @@ desktop app before you start trying to run commands from the
 terminal.</p>
 <div id="docker" class="section level3">
 <h3>Docker</h3>
-<p><a href="https://youtu.be/fv4i0rDcr0s">Video opening rocker from
+<p><img src="images/youtube-brands.svg" /> <a
+href="https://youtu.be/fv4i0rDcr0s">Video opening rocker/rstudio from
 terminal</a></p>
 <p>You can run containers either from the desktop app or from the
 terminal. In the video I run this code</p>
@@ -650,13 +677,18 @@ terminal. In the video I run this code</p>
   rocker/rstudio:latest-daily</code></pre>
 <p>Then I open my RStudio server from a browser with
 <code>http://localhost:8787</code> (not <code>https</code> but
-<code>http</code>) and login as user “test” with password “test”.</p>
+<code>http</code>) and login as user “test” with password “test”. I
+could use <code>-e DISABLE_AUTH=true</code> and remove the
+<code>-e USER=test</code> and <code>-e PASSWORD=test</code> parts to
+turn off the login page.</p>
 <p><strong>Note</strong> 1) If running from the terminal, make sure to
-open the desktop first to start the docker daemon otherwise you’ll get
-an error about the daemon not running. 2) The rocker apps are listening
-on port 8787, so make sure the number after the <code>:</code> is 8787.
-The first number is what you will use in the browser. So if you did
-<code>8080:8787</code>, then go to <code>localhost:8080</code>.</p>
+open Docker Desktop first to start the docker daemon otherwise you’ll
+get an error about the daemon not running. 2) The rocker apps are
+listening on port 8787, so make sure the number after the <code>:</code>
+is 8787. The first number is what you will use in the browser. So if you
+did <code>8080:8787</code>, then go to
+<code>http://localhost:8080</code> in your browser (not
+<code>https</code> but <code>http</code>) .</p>
 </div>
 <div id="podman" class="section level3">
 <h3>Podman</h3>
@@ -665,7 +697,8 @@ important thing to know about Podman is that it replaces the USER
 variable with “root”. It doesn’t matter if you pass in
 <code>-e USER=something</code>; it is going to delete that. So you have
 to log into the RStudio server with “root” as the user.</p>
-<p><a href="https://youtu.be/Ll4apwgBs_g">Video of running with Podman
+<p><img src="images/youtube-brands.svg" /> <a
+href="https://youtu.be/Ll4apwgBs_g">Video of running with Podman
 Desktop</a></p>
 <p>The video shows me running a container using the Podman Desktop app.
 I can also run this command from a terminal and do the same thing I did
@@ -689,16 +722,25 @@ if say we needed the archived geo packages (rgdal, etc).</p>
   -p 8181:8787 \
   -e USER=test \
   -e PASSWORD=test \
-  -name geospatial \
+  --name geospatial \
   rocker/geospatial:4.1</code></pre>
-<p>MacOS users with Apple chip add <code>--platform linux/amd64</code>
-so run this</p>
+<p>MacOS users with Apple M2 chip read <a
+href="https://levelup.gitconnected.com/docker-on-apple-silicon-mac-how-to-run-x86-containers-with-rosetta-2-4a679913a0d5">this
+thread</a> and <a
+href="https://github.com/rocker-org/rocker-versioned2/issues/144">this
+thread</a> for how to run with Rosetta emulation. Basically you need
+Ventura and the latest version of Rosetta which you can get with
+<code>softwareupdate --install-rosetta</code>. If you have the M1 chip
+and MacOS &lt; 12.5, you may be out of luck until an arm64 image is
+released by Rocker. I was unable to get the Rocker <code>amd64</code>
+images (like geospatial) to connect to the R server on an M1 Mac with
+BigSur.</p>
 <pre><code>docker run --platform linux/amd64 \
   -d \
   -p 8181:8787 \
   -e USER=test \
   -e PASSWORD=test \
-  -name geospatial \
+  --name geospatial \
   rocker/geospatial:4.1</code></pre>
 </div>
 </div>

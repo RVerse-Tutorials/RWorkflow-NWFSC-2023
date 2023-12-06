@@ -14,7 +14,7 @@ navbar:
       href: week1-introtodocker-cs.html
     - text: Intro to JupyterHubs with R
       icon: fa-cogs
-      href: juyterhub-R.html
+      href: jupyterhub-R.html
     - text: HackDay Geospatial R
       icon: fa-cogs
   - text: RVerse
