@@ -39,7 +39,7 @@ On Dec 19th 8-3pm PT, I will run a mini NOAA hackday during which we will use th
 **Schedule**
 
 * 8-8:30 Welcome and orientation to the JupyterHub
-* 8:30-10am Geospatial tutorials in R on accessing NASA Earth Data
+* 8:30-10am Geospatial tutorials in R using NASA EarthData.
 * 10-11am Explore data and come up with a project
 * 11-12pm Break and lunch
 * 12-12:30pm Pitch a project!
