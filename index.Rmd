@@ -16,7 +16,7 @@ title: "Practical Workflows for NMFS Scientists 2023"
 
 <img style="float: right;" src="images/tools-logo-transparent.png" width=30%>
 
-In 2023, I am focusing on cloud computing platforms and working with remote-sensing data in R. Why cloud computing platforms? This allows everyone to work in a fully provisioned platform so you can focus on the science and not the software installation. See the 'Workshop Sessions' tab in top navigation for a link to 2023 sessions.
+In 2023, I am focusing on cloud computing platforms and working with NASA EarthData (mainly) in R. See the 'Workshop Sessions' tab in top navigation for a link to 2023 sessions.
 
 **About the instructor Eli Holmes**: I am a modeler/applied mathematician. I teach time-series analysis at the University of Washington (using R) and I teach workshops on R and reproducible research. Since 2021, I have been attending and helping with hackweeks using JupyterHubs provisioned for geospatial analyses: [NASA EarthData Cloud hackweek](https://nasa-openscapes.github.io/2021-Cloud-Hackathon/), [ICESat-2 hackweek](https://icesat-2-2022.hackweek.io/), [SnowEx hackweek](https://snowex-2022.hackweek.io/) (assistant), [OceanHackWeek](https://oceanhackweek.org/ohw23/index.html) (project lead), [ITCOocean Hack2Week](https://hackweek-itcoocean.github.io/2023-Hackbook/) (lead organizer). 
 
