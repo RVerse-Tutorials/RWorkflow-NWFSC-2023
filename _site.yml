@@ -6,26 +6,17 @@ navbar:
   - text: Set-up
     icon: fa-clone
     href: set-up.html
-  - text: Workshop Weekly Notes
+  - text: Workshop Sessions
     icon: fa-calendar
     menu:
-    - text: Week 1 Intro to Docker
+    - text: Intro to Docker
       icon: fa-cogs
       href: week1-introtodocker-cs.html
-    - text: Week 2 Creating Docker Images
+    - text: Intro to JupyterHubs with R
       icon: fa-cogs
-    - text: Week 3 Remote-sensing Data in R
-      icon: fa-recycle
-    - text: Week 4 Remote sensing Data in R
-      icon: fa-recycle
-    - text: Week 5 Part 1. SDMs
-      icon: fa-box
-    - text: Week 6 Part 2. SDMs
-      icon: fa-box
-    - text: Week 7 Part 3. SDMs
-      icon: fa-file-code
-    - text: Week 8 Setting up a JupyterHub
-      icon: fab fa-github-alt
+      href: juyterhub-R.html
+    - text: HackDay Geospatial R
+      icon: fa-cogs
   - text: RVerse
     icon: fas fa-toolbox
     href: https://rverse-tutorials.github.io

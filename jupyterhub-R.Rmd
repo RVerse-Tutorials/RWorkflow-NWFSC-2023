@@ -1,0 +1,11 @@
+---
+title: "Intro to JupyterHubs with RStudio"
+output:
+  html_document:
+    toc: true
+    include:
+      after_body: footer.html
+---
+
+## Intro to JupyterHubs
+

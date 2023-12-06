@@ -1,5 +1,5 @@
 ---
-title: "Practical Workflows for Scientists June-July 2023"
+title: "Practical Workflows for NMFS Scientists 2023"
 ---
 
 <table style="background-color: blue; width: 100%;">
@@ -16,25 +16,48 @@ title: "Practical Workflows for Scientists June-July 2023"
 
 <img style="float: right;" src="images/tools-logo-transparent.png" width=30%>
 
-In 2023, I am focusing on Part 1) cloud computing platforms and Part 2) working with remote-sensing data in R. Why cloud computing? Well the days of doing all your work on a computer with all your software downloaded to that are numbered. It is not a very efficient way to work. It is more efficient to have everyone working on a fully provisioned platform so you can focus on the science and not the software installation headaches. Part 2) is because I am preparing for a couple oceanography hackweeks in late summer. The focus of these workshops is practical skills and tools; they are intended to get you applying the skill immediately in your own work. I will give you links to my and other NOAA GitHub repositories that illustrate more complex examples (that you can copy and build on).
+In 2023, I am focusing on cloud computing platforms and working with remote-sensing data in R. Why cloud computing platforms? This allows everyone to work in a fully provisioned platform so you can focus on the science and not the software installation. See the 'Workshop Sessions' tab in top navigation for a link to 2023 sessions.
 
-**Target audience**: This year I am assuming that you have an understanding of using Git and GitHub. See the [RWorflow Workshops 2022](https://rverse-tutorials.github.io/RWorkflow-NWFSC-2022/) if not. All sessions (except last) were recorded.
-
-**About the instructor Eli Holmes**: I am a modeler/applied mathematician. I develop R packages for public use. I teach time-series analysis at the University of Washington (using R) and I teach workshops on R and reproducible research and am heavily involved in efforts to support transition to Open Science workflows within NOAA Fisheries. [website](http://eeholmes.github.io/)
+**About the instructor Eli Holmes**: I am a modeler/applied mathematician. I teach time-series analysis at the University of Washington (using R) and I teach workshops on R and reproducible research. Since 2021, I have been attending and helping with hackweeks using JupyterHubs provisioned for geospatial analyses: [NASA EarthData Cloud hackweek](https://nasa-openscapes.github.io/2021-Cloud-Hackathon/), [ICESat-2 hackweek](https://icesat-2-2022.hackweek.io/), [SnowEx hackweek](https://snowex-2022.hackweek.io/) (assistant), [OceanHackWeek](https://oceanhackweek.org/ohw23/index.html) (project lead), [ITCOocean Hack2Week](https://hackweek-itcoocean.github.io/2023-Hackbook/) (lead organizer). 
 
 <hr>
 
-### 2023 Topics
+## Dec 6 - Intro to JupyterHubs
+
+On Dec 6th at 12:30PM PT, I am demo-ing a JupyterHub that I have set up on a Kubernetes Cluster on the NOAA Azure account. If you want to join [ADD CALENDAR](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MjJ0OGo5bGJsZ2xrdmc3NWtpMnNtY244OXVfMjAyMzEyMDZUMjEwMDAwWiBjXzkxNmI2OTQ4ZWYyZWU4YjdkNDljMjg2NjFlZmMwNzk4MzAzYzI3NDJiZTM5OWM5MjkwZmEwMmQ5MzIwYzc2OWVAZw&tmsrc=c_916b6948ef2ee8b7d49c28661efc0798303c2742be399c9290fa02d9320c769e%40group.calendar.google.com) event.
+
+In this session, you will get a brief introduction to JupyterHubs, which is a popular platform for cloud computing. It is an open source, provider agnostic (runs on AWS, GCP or Azure), computing platform used across scientific communities for shared computing environments. You'll get to play around on a JupyterHub set up for geospatial analyses with R or Python using either Jupyter notebooks or RStudio. I will discuss how cloud computing platforms streamline and accelerate science innovation by increasing reproducibility and removing the "set-up" phase of a computing environment. This is especially important with big data geospatial analysis as the 'set-up' phase can be tricky and time-consuming.
+
+JupyterHub: [https://dhub.opensci.live/hub/login](https://dhub.opensci.live/hub/login)
+
+If you want to get on the JupyterHub during the intro session, I will need your GitHub username. Provide that with this form: [https://forms.gle/RQdnw4HsbSd3zC9b8](https://forms.gle/RQdnw4HsbSd3zC9b8)
+
+## Dec 19 - Geospatial Data in R HackDay Dec 19th
+
+On Dec 19th 8-3pm PT, I will run a mini NOAA hackday during which we will use the JupyterHub to do a day of geospatial analysis with R and work on projects pitched by the group.  [ADD CALENDAR](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MHM4MWtvNDFvamRrcWNnOHBoMHZvb2VqYWkgY185MTZiNjk0OGVmMmVlOGI3ZDQ5YzI4NjYxZWZjMDc5ODMwM2MyNzQyYmUzOTljOTI5MGZhMDJkOTMyMGM3NjllQGc&tmsrc=c_916b6948ef2ee8b7d49c28661efc0798303c2742be399c9290fa02d9320c769e%40group.calendar.google.com) event.
+
+**Schedule**
+
+* 8-8:30 Welcome and orientation to the JupyterHub
+* 8:30-10am Geospatial tutorials in R on accessing NASA Earth Data
+* 10-11am Explore data and come up with a project
+* 11-12pm Break and lunch
+* 12-12:30pm Pitch a project!
+* 12:30-2:30pm Hack and co-work on the project
+* 2:30-3pm Report out!
+
+GitHub username required to participate as we will use it provide access to the JupyterHub. Provide with this form: [https://forms.gle/RQdnw4HsbSd3zC9b8](https://forms.gle/RQdnw4HsbSd3zC9b8).
+
+*Coding skills needed* For this session, I will only be presenting content in R. However Python programmers are welcome to join as a geospatial environment for Python is also on the hub. You will not need Git/GitHub skills. The GitHub username is used for authentication to the hub.
 
 
-* [June 27](week1-introtodocker-cs.html) **Introduction to Docker for R users** I will introduce you to using Docker to run R and RStudio in containers. [Lecture notes](week1-introtodocker-cs.html)
-* [July 7]() **Customizing Docker images** We will learn how to create customized Docker files and how to build your own docker images that you'll can store on Docker Hub.
-* [July 14]() **Part 1. Intro to remote sensing data with R**
-* [July 21]() **Part 2. Intro to remote sensing data with R**
+<!-- 
 * [July 28]() **Part 1. Intro to marine SDMs with R**
 * [August 4]() **Part 2. Intro to marine SDMs with R**
+* [July 7]() **Customizing Docker images** We will learn how to create customized Docker files and how to build your own docker images that you'll can store on Docker Hub.
 
-<!-- - [Lecture video](https://youtu.be/M1sOC4046PQ) - [Q&A](week1.html) -->
+
+[Lecture video](https://youtu.be/M1sOC4046PQ) - [Q&A](week1.html) -->
 
 
 <hr>
