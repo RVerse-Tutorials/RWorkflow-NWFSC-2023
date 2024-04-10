@@ -38,7 +38,7 @@ Today I will show Docker using GitHub Codespaces since Docker Desktop requires a
 
 ## Let's run the Docker tutorial image
 
-![](images/youtube-brands.svg) [Video of this step](https://youtu.be/ZUCHhflSWpQ)
+![](images/youtube-brands.svg){width=20px} [Video of this step](https://youtu.be/ZUCHhflSWpQ)
 
 
 Before we run a random container, let's take a look at the image that we will be using: https://hub.docker.com/r/docker/getting-started
@@ -99,7 +99,7 @@ Now your application will open in your browser. *It didn't!* Just reload the pag
 
 ## Run RStudio within a Codespace
 
-![](images/youtube-brands.svg) [Video of this step](https://www.youtube.com/watch?v=bzvDaQTqgLg)
+![](images/youtube-brands.svg){width=20px} [Video of this step](https://www.youtube.com/watch?v=bzvDaQTqgLg)
 
 The [Rocker Project](https://rocker-project.org/) makes Docker [images](https://rocker-project.org/images/) for running R and RStudio. Let's spin up RStudio within Codespaces.
 
@@ -216,7 +216,7 @@ Running containers on your local computer is just like (mostly) running containe
 
 ### Docker
 
-![](images/youtube-brands.svg) [Video opening rocker/rstudio from terminal](https://youtu.be/fv4i0rDcr0s)
+![](images/youtube-brands.svg){width=20px} [Video opening rocker/rstudio from terminal](https://youtu.be/fv4i0rDcr0s)
 
 You can run containers either from the desktop app or from the terminal. In the video I run this code
 
@@ -238,7 +238,7 @@ Then I open my RStudio server from a browser with `http://localhost:8787` (not `
 
 Running containers with Podman is basically the same, but an important thing to know about Podman is that it replaces the USER variable with "root". It doesn't matter if you pass in `-e USER=something`; it is going to delete that. So you have to log into the RStudio server with "root" as the user.
 
-![](images/youtube-brands.svg) [Video of running with Podman Desktop](https://youtu.be/Ll4apwgBs_g)
+![](images/youtube-brands.svg){width=20px} [Video of running with Podman Desktop](https://youtu.be/Ll4apwgBs_g)
 
 The video shows me running a container using the Podman Desktop app. I can also run this command from a terminal and do the same thing I did from the desktop app.
 
